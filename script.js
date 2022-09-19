@@ -4,7 +4,7 @@ let html = ``
 
 function datafetch() {
   let SearchCountry = document.querySelector('#search-country')
-  if (SearchCountry.value.length < 1) {
+  if (SearchCountry.value.length < 3) {
     alert('Please  Enter a Valid name of Country')
   } else {
     let dataresponse = fetch(
@@ -44,7 +44,7 @@ function datafetch() {
         SearchCountry.value = ''
       })
       .catch((err) => {
-        console.log(err)
+        alert("Page not found"+err);
       })
   }
 }
